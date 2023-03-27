@@ -1,0 +1,70 @@
+.hotel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 46px;
+  padding: 25px 25px 28px;
+  border: 1px solid #eaeaea;
+  border-radius: 15px;
+
+  &__right-side {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 15px;
+  }
+
+  &__left-side {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__name {
+    line-height: 26px;
+    color: #3a3a3a;
+    font: {
+      family: "PT Sans", sans-serif;
+      style: normal;
+      weight: 700;
+      size: 20px;
+    }
+  }
+
+  &__desc {
+    line-height: 24px;
+    color: #3a3a3a;
+    font: {
+      family: "PT Sans", sans-serif;
+      style: normal;
+      weight: 400;
+      size: 16px;
+    }
+  }
+
+  &__price {
+    text-align: right;
+
+    &-count {
+      line-height: 32px;
+      text-align: right;
+      color: #3a3a3a;
+      font: {
+        family: "PT Sans", sans-serif;
+        style: normal;
+        weight: 700;
+        size: 25px;
+      }
+    }
+
+    &-desc {
+      line-height: 16px;
+      color: #868686;
+      font: {
+        family: "PT Sans", sans-serif;
+        style: normal;
+        weight: 400;
+        size: 16px;
+      }
+    }
+  }
+}

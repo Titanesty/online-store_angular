@@ -1,0 +1,22 @@
+<div class="hotel">
+  <div class="hotel__left-side">
+    <div class="hotel__name">
+      <span>{{ hotelInfo.name }}</span>
+    </div>
+    <TheRating [rating]="hotelInfo.rating" />
+    <div class="hotel__desc">
+      <p>{{ hotelInfo.desc }}</p>
+    </div>
+  </div>
+  <div class="hotel__right-side">
+    <div class="hotel__price">
+      <div class="hotel__price-count">
+        <span>{{ hotelInfo.price }}</span>
+      </div>
+      <div class="hotel__price-desc">
+        <span>Цена за 1 ночь</span>
+      </div>
+    </div>
+    <TheButton class="hotel__btn" (myClick)="onChildClick()" [buttonText]="buttonText" />
+  </div>
+</div>
