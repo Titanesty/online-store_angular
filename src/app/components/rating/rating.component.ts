@@ -8,5 +8,4 @@ import { Component, Input } from "@angular/core";
 export class RatingComponent {
   @Input() rating: number;
   stars: number[] = new Array(5);
-  colorStar: string = "#ffffff";
 }

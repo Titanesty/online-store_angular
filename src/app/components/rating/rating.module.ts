@@ -1,10 +1,10 @@
 import { NgModule } from "@angular/core";
 import { RatingComponent } from "./rating.component";
-import { NgForOf } from "@angular/common";
+import { NgForOf, NgStyle } from "@angular/common";
 
 @NgModule({
   declarations: [RatingComponent],
-  imports: [NgForOf],
+  imports: [NgForOf, NgStyle],
   providers: [],
   exports: [RatingComponent],
   bootstrap: [],

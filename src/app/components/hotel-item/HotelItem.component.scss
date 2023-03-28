@@ -6,6 +6,12 @@
   padding: 25px 25px 28px;
   border: 1px solid #eaeaea;
   border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+
+  &:hover {
+    box-shadow: 0px -5px 10px 0px rgba(0, 0, 0, 0.5);
+  }
 
   &__right-side {
     display: flex;
@@ -17,6 +23,32 @@
   &__left-side {
     display: flex;
     flex-direction: column;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+  }
+
+  &__rating {
+    margin-right: 15px;
+  }
+
+  &__type {
+    margin-right: 8px;
+  }
+
+  &__reviews {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-right: 6px;
+  }
+
+  &__location {
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
 
   &__name {
