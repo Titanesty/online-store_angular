@@ -1,4 +1,6 @@
 .hotels-page {
+  width: 100%;
+
   &__container {
     width: 100%;
     max-width: 1240px;
@@ -13,7 +15,27 @@
     gap: 40px;
   }
 
+  &__price {
+    width: 100%;
+
+    &-content {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    &-line {
+      display: inline-block;
+      width: 10px;
+      height: 1px;
+      background-color: #c4c4c4;
+    }
+  }
+
   &__left-block {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
     width: 100%;
     max-width: 325px;
   }
@@ -21,5 +43,29 @@
   &__content {
     width: 100%;
     max-width: 835px;
+  }
+
+  &__search {
+    display: block;
+  }
+
+  &__filter {
+    &-country {
+      display: block;
+      height: 325px;
+      width: 100%;
+    }
+
+    &-type {
+      display: block;
+      height: auto;
+      width: 100%;
+    }
+
+    &-rating {
+      display: block;
+      height: auto;
+      width: 100%;
+    }
   }
 }

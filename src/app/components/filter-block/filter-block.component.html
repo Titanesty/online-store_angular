@@ -1,0 +1,17 @@
+<div class="filter-block">
+  <div class="filter-block__list">
+    <div class="filter-block__item" *ngFor="let filter of filterValue">
+      <div class="filter-block__checkbox">
+        <label class="filter-block__checkbox-label">
+          <input
+            class="filter-block__checkbox-input"
+            [checked]="filter.selected"
+            (change)="filter.selected = !filter.selected"
+            type="checkbox"
+          />
+          <span class="filter-block__name">{{ filter.name }}</span>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
