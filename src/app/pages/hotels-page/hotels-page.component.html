@@ -36,7 +36,9 @@
       </div>
 
       <div class="hotels-page__main">
-        <HotelList [hotels]="hotelsInfo" />
+        <HotelList class="hotels-page__hotels" [hotels]="hotelsInfo" />
+
+        <ThePag class="hotels-page__pagin" [allPages]="15" />
       </div>
     </div>
   </div>

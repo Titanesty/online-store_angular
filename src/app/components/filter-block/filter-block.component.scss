@@ -39,30 +39,36 @@
     }
 
     &-input {
-      display: inline-block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       background-color: transparent;
       border: 1px solid #cdcdcd;
       border-radius: 4px;
       appearance: none;
       width: 18px;
       height: 18px;
-      position: relative;
       cursor: pointer;
+
+      &:hover {
+        background-color: #868686;
+      }
 
       &:checked {
         background-color: #00bb6d;
         border: 1px solid #00bb6d;
 
-        //&:after {
-        //  content: url("../src/app/images/icons/check.svg");
-        //  fill: #ffffff;
-        //  position: absolute;
-        //  top: 50%;
-        //  transform: translateY(-50%);
-        //  left: 0;
-        //  right: 0;
-        //  margin: 0 auto;
-        //}
+        &:after {
+          content: "";
+          //background: no-repeat url("../../../assets/check.svg");
+          display: block;
+          width: 5px;
+          height: 10px;
+          border: solid white;
+          border-width: 0 2px 2px 0;
+          border-radius: 1px;
+          transform: rotate(45deg);
+        }
       }
     }
   }
