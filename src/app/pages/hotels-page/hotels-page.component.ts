@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { HotelInfo } from "../../models/hotel.index";
 import { Filter } from "../../models/filter.index";
 
@@ -7,7 +7,18 @@ import { Filter } from "../../models/filter.index";
   templateUrl: "./hotels-page.component.html",
   styleUrls: ["./hotels-page.component.scss"],
 })
-export class HotelsPageComponent {
+export class HotelsPageComponent implements OnInit {
+  ngOnInit(): void {
+    this.filterCounterReactive = this.hotelsInfo;
+  }
+
+  bookHotel(index: number): void {
+    console.log("index", index);
+    this.hotelsInfo[index].isAvailable = !this.hotelsInfo[index].isAvailable;
+  }
+
+  filterCounterReactive: HotelInfo[] = [];
+
   hotelPlaceholder: string = "Поиск...";
   filterCounter: Filter[] = [
     { name: "Австрия", selected: false },
@@ -53,36 +64,36 @@ export class HotelsPageComponent {
       reviews: 23,
       type: "Апартаменты",
     },
-    // {
-    //   desc: "Этот 4-звездочный отель расположен в центре города. На его территории есть бассейн с терассой и сауна. Из номеров открывается вид на море.",
-    //   isAvailable: true,
-    //   name: "Marina In",
-    //   price: 4600,
-    //   rating: 3,
-    //   location: "Албания",
-    //   reviews: 121,
-    //   type: "Апартаменты",
-    // },
-    // {
-    //   desc: "Этот 4-звездочный отель расположен в центре города. На его территории есть бассейн с терассой и сауна. Из номеров открывается вид на море.",
-    //   isAvailable: true,
-    //   name: "Marina In",
-    //   price: 4600,
-    //   rating: 4,
-    //   location: "Албания",
-    //   reviews: 23,
-    //   type: "Апартаменты",
-    // },
-    // {
-    //   desc: "Этот 4-звездочный отель расположен в центре города. На его территории есть бассейн с терассой и сауна. Из номеров открывается вид на море.",
-    //   isAvailable: true,
-    //   name: "Marina In",
-    //   price: 4600,
-    //   rating: 5,
-    //   location: "Албания",
-    //   reviews: 23,
-    //   type: "Апартаменты",
-    // },
+    {
+      desc: "Этот 4-звездочный отель расположен в центре города. На его территории есть бассейн с терассой и сауна. Из номеров открывается вид на море.",
+      isAvailable: true,
+      name: "Marina In",
+      price: 4600,
+      rating: 3,
+      location: "Албания",
+      reviews: 121,
+      type: "Апартаменты",
+    },
+    {
+      desc: "Этот 4-звездочный отель расположен в центре города. На его территории есть бассейн с терассой и сауна. Из номеров открывается вид на море.",
+      isAvailable: true,
+      name: "Marina In",
+      price: 4600,
+      rating: 4,
+      location: "Албания",
+      reviews: 23,
+      type: "Апартаменты",
+    },
+    {
+      desc: "Этот 4-звездочный отель расположен в центре города. На его территории есть бассейн с терассой и сауна. Из номеров открывается вид на море.",
+      isAvailable: true,
+      name: "Marina In",
+      price: 4600,
+      rating: 5,
+      location: "Албания",
+      reviews: 23,
+      type: "Апартаменты",
+    },
   ];
 
   clearFilter() {

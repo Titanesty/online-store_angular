@@ -1,5 +1,5 @@
 <div class="hotels">
   <div class="hotels__list">
-    <HotelItem *ngFor="let item of hotels" [hotelInfo]="item" />
+    <HotelItem (myClick)="myClick(i)" *ngFor="let item of hotels; let i = index" [hotelInfo]="item" />
   </div>
 </div>

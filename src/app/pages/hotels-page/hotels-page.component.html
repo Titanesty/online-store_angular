@@ -3,9 +3,18 @@
     <div class="hotels-page__wrapper">
       <div class="hotels-page__left-block">
         <TheSearch class="hotels-page__search" [searchPlaceholder]="hotelPlaceholder" />
-        <FilterBlock class="hotels-page__filter-country" [filterValue]="filterCounter" />
-        <FilterBlock class="hotels-page__filter-type" [filterValue]="filterType" />
-        <FilterBlock class="hotels-page__filter-rating" [filterValue]="filterRating" />
+
+        <FilterLayout class="hotels-page__price" [title]="'Страны'">
+          <FilterBlock class="hotels-page__filter-country" [filterValue]="filterCounter" />
+        </FilterLayout>
+
+        <FilterLayout class="hotels-page__price" [title]="'Тип'">
+          <FilterBlock class="hotels-page__filter-type" [filterValue]="filterType" />
+        </FilterLayout>
+
+        <FilterLayout class="hotels-page__price" [title]="'Количество звезд'">
+          <FilterBlock class="hotels-page__filter-rating" [filterValue]="filterRating" />
+        </FilterLayout>
 
         <FilterLayout class="hotels-page__price" [title]="'Количество отзывов (от)'">
           <div class="hotels-page__price-content">
@@ -16,8 +25,8 @@
         </FilterLayout>
 
         <TheButton><span>Применить фильтр</span></TheButton>
-        <TheButton (myClick)="clearFilter()"
-          ><svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <TheButton (myClick)="clearFilter()">
+          <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               fill-rule="evenodd"
               clip-rule="evenodd"
@@ -36,7 +45,7 @@
       </div>
 
       <div class="hotels-page__main">
-        <HotelList class="hotels-page__hotels" [hotels]="hotelsInfo" />
+        <HotelList class="hotels-page__hotels" (onClick)="bookHotel($event)" [hotels]="hotelsInfo" />
 
         <ThePag class="hotels-page__pagin" [allPages]="15" />
       </div>
